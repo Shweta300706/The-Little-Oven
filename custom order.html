@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Order - The Little Oven</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f5;
+      color: #4b2e2e;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffe6e1;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f67280;
+    }
+
+    .order-section {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .order-section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #ffb6b9;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f67280;
+    }
+
+    .confirmation {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #4b2e2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Little Oven</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="custom order.html">Custom Order</a>
+      <a href="about us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="add to card.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="order-section">
+    <h2>Custom Cake Order</h2>
+    <form id="orderForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="flavor">Cake Flavor</label>
+      <select id="flavor" name="flavor" required>
+        <option value="">Select flavor</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Red Velvet">Red Velvet</option>
+        <option value="Strawberry">Strawberry</option>
+      </select>
+
+      <label for="size">Cake Size</label>
+      <select id="size" name="size" required>
+        <option value="">Select size</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+
+      <label for="message">Custom Message on Cake</label>
+      <input type="text" id="message" name="message">
+
+      <label for="instructions">Additional Instructions</label>
+      <textarea id="instructions" name="instructions" rows="4"></textarea>
+
+      <button type="submit">Place Order</button>
+    </form>
+    <div class="confirmation" id="confirmation">Thank you! Your order has been placed 🎂</div>
+  </section>
+
+  <footer>
+    <p>
+      <i class="fab fa-instagram"></i> Instagram |
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </p>
+    <p>123 Bakery Lane, Sweetville</p>
+    <p>&copy; 2025 The Little Oven</p>
+  </footer>
+  
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("confirmation").style.display = "block";
+      document.getElementById("orderForm").reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Little Oven - Contact Us</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f5;
+      margin: 0;
+      color: #4b2e2e;
+    }
+
+    header {
+      background-color: #ffe6e1;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f67280;
+    }
+
+    .contact-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #ffb6b9;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f67280;
+    }
+
+    .confirmation {
+      display: none;
+      margin-top: 20px;
+      color: green;
+    }
+
+    footer {
+      background-color: #4b2e2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Little Oven</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="custom order.html">Custom Order</a>
+      <a href="about us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="add to card.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div class="confirmation" id="confirmationMessage">Thank you for your message! 🍰</div>
+    </form>
+  </section>
+
+  <footer>
+    <p>
+      <i class="fab fa-instagram"></i> Instagram |
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </p>
+    <p>123 Bakery Lane, Sweetville</p>
+    <p>&copy; 2025 The Little Oven</p>
+  </footer>
+  
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("confirmationMessage").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("contactForm").reset();
+        document.getElementById("confirmationMessage").style.display = "none";
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
